@@ -1,0 +1,38 @@
+<div class="container" *ngIf="books | async; let bookList; else loading">
+  <mat-toolbar color="primary">
+    <span>Search books</span>
+    <span class="app-spacer"></span>
+    <mat-form-field class="search">
+      <input matInput placeholder="Title" [(ngModel)]="title">
+      <mat-icon matSuffix (click)="search()">search</mat-icon>
+    </mat-form-field>
+  </mat-toolbar>
+
+  <mat-card class="centre-aligned" *ngIf="!bookList.length">
+      <h2>No book found for the specified title.</h2>
+  </mat-card>
+
+  <mat-card class="book" *ngFor="let book of bookList">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image" [ngStyle]="{ 'background-image': 'url(' + book.volumeInfo.imageLinks.thumbnail + ')' }"></div>
+      <mat-card-title>{{book?.volumeInfo.title}}</mat-card-title>
+      <mat-card-subtitle>{{book?.volumeInfo.authors[0]}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{book?.volumeInfo?.description?.substring(0, 200)}}...
+      </p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button (click)="showBookDetails(book.id)">Details</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<ng-template #loading>
+  <mat-card class="centre-aligned">
+      <h2 class="example-h2">Loading books...</h2>
+
+      <mat-spinner></mat-spinner>
+  </mat-card>
+</ng-template>

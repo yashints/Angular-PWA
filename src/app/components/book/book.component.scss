@@ -1,0 +1,17 @@
+.container {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  background-color: #fefefe;
+}
+.book {
+  width: 30%;
+
+  padding-top: 50px;
+
+  img {
+    width: 100%;
+    max-height: 300px;
+  }
+}
+

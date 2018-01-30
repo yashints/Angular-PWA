@@ -1,0 +1,59 @@
+.container {
+  padding: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .mat-toolbar {
+    margin-bottom: 20px;
+
+    .mat-form-field {
+      font-size: 14px;
+
+      .mat-icon {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.book {
+  margin-bottom: 50px;
+  width: 25%;
+
+  .mat-card-content {
+    min-height: 100px;
+  }
+  .mat-card-actions {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+  }
+  .header-image {
+    background-size: cover;
+  }
+}
+
+.centre-aligned {
+  margin-top: 15%;
+  display: flex;
+  justify-content: center;
+}
+
+/deep/ {
+  .mat-focused {
+    .mat-input-underline {
+      background-color: rgba(255,255,255,.42);
+    }
+    .mat-form-field-label {
+      color: white;
+    }
+  }
+  .mat-input-underline {
+    background-color: rgba(255,255,255,.42);
+  }
+  .mat-form-field-label {
+    color: white;
+  }
+}
