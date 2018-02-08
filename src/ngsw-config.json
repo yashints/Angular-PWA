@@ -1,0 +1,62 @@
+{
+  "index": "/index.html",
+  "appData": {
+    "name": "PW Book Shelf V1",
+    "description": "Added app shell and service worker support"
+  },
+  "assetGroups": [{
+    "name": "app",
+    "installMode": "prefetch",
+    "resources": {
+      "files": [
+        "/favicon.ico",
+        "/index.html"
+      ],
+      "versionedFiles": [
+        "/*.bundle.css",
+        "/*.bundle.js",
+        "/*.chunk.js"
+      ]
+    }
+  }, {
+    "name": "assets",
+    "installMode": "lazy",
+    "updateMode": "prefetch",
+    "resources": {
+      "files": [
+        "/assets/**"
+      ]
+    }
+  }, {
+    "name": "fonts",
+    "resources": {
+      "urls": [
+        "https://fonts.googleapis.com/**"
+      ]
+    }
+  }],
+  "dataGroups": [{
+      "name": "api-freshness",
+      "urls": [
+        "https://www.googleapis.com/books/v1/volumes/*"
+      ],
+      "cacheConfig": {
+        "strategy": "freshness",
+        "maxSize": 20,
+        "maxAge": "3d",
+        "timeout": "10s"
+      }
+    },
+    {
+      "name": "api-performance",
+      "urls": [
+        "https://www.googleapis.com/books/v1/volumes"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 20,
+        "maxAge": "3d"
+      }
+    }
+  ]
+}

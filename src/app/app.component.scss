@@ -18,3 +18,9 @@ mat-sidenav {
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  mat-sidenav {
+    display: none;
+  }
+}

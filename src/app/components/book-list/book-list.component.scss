@@ -57,3 +57,17 @@
     color: white;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .book {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}

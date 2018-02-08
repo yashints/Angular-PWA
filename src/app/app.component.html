@@ -13,7 +13,7 @@
 </mat-toolbar>
 
 <mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav [(opened)]="opened" mode="side" opened="true">
+  <mat-sidenav #sidenav mode="side" opened="!mobileQuery.matches">
     <mat-list>
       <mat-list-item>
         <a routerLink="/books">

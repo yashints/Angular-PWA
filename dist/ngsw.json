@@ -1,0 +1,88 @@
+{
+  "configVersion": 1,
+  "index": "/index.html",
+  "appData": {
+    "name": "PW Book Shelf V1",
+    "description": "Added app shell and service worker support"
+  },
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/inline.8e2a6bb0d7157c5426d4.bundle.js",
+        "/main.01af6939586fe3acf29c.bundle.js",
+        "/polyfills.f20484b2fa4642e0dca8.bundle.js",
+        "/styles.eb9c4f3d82f277937964.bundle.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/icon-128x128.png",
+        "/assets/icon-144x144.png",
+        "/assets/icon-152x152.png",
+        "/assets/icon-192x192.png",
+        "/assets/icon-384x384.png",
+        "/assets/icon-512x512.png",
+        "/assets/icon-72x72.png",
+        "/assets/icon-96x96.png"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "fonts",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [],
+      "patterns": [
+        "https:\\/\\/fonts\\.googleapis\\.com\\/.*"
+      ]
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-freshness",
+      "patterns": [
+        "https:\\/\\/www\\.googleapis\\.com\\/books\\/v1\\/volumes\\/[^\\/]+"
+      ],
+      "strategy": "freshness",
+      "maxSize": 20,
+      "maxAge": 259200000,
+      "timeoutMs": 10000,
+      "version": 1
+    },
+    {
+      "name": "api-performance",
+      "patterns": [
+        "https:\\/\\/www\\.googleapis\\.com\\/books\\/v1\\/volumes"
+      ],
+      "strategy": "performance",
+      "maxSize": 20,
+      "maxAge": 259200000,
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/inline.8e2a6bb0d7157c5426d4.bundle.js": "4ee89d2b3d70a6be73f90ed8ed56478cd1217e54",
+    "/assets/icon-128x128.png": "34b936fd4ee788a406856d8da3978a9187877db2",
+    "/main.01af6939586fe3acf29c.bundle.js": "c5dc0e6225ce32014114bbab00e1116121944bc3",
+    "/assets/icon-144x144.png": "cf0614a767e44066ea8020e2277f4fa85c9e1352",
+    "/polyfills.f20484b2fa4642e0dca8.bundle.js": "0b0af365e031b7cbba789493d311e94192720c68",
+    "/assets/icon-152x152.png": "45a6ac775fb239f6e0fddfc411d8f83bfbc5a970",
+    "/styles.eb9c4f3d82f277937964.bundle.css": "af9be3f8bb299a134dece81120b472b025c7c937",
+    "/assets/icon-192x192.png": "6290c770acd9c87378fec07554ee1d52edbbac2d",
+    "/favicon.ico": "f5be45a363b1a36d611d4792b63612e167a0b02c",
+    "/assets/icon-384x384.png": "d5703357fce41290b0efecb4fafa7529a7c4ff56",
+    "/index.html": "79e137c2fedd13368b1714d4cd61bdc33abe6cc2",
+    "/assets/icon-512x512.png": "aa9a5192e2b317f6b189196cc851f42727145fd1",
+    "/assets/icon-72x72.png": "9786a696af52c2063ba4913143242a756be92979",
+    "/assets/icon-96x96.png": "b659460abec4834a612b62b0e2652c5645b036ac"
+  }
+}

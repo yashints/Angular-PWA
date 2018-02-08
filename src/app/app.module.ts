@@ -1,9 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { MaterialImporterModule } from './material-importer.module';
@@ -22,13 +25,17 @@ import { BooksService } from './services/books.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MaterialImporterModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    environment.production ? ServiceWorkerModule.register('ngsw-worker.js') : []
   ],
-  providers: [BooksService],
+  providers: [
+    BooksService,
+    MediaMatcher
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
